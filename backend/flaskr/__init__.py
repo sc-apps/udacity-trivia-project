@@ -195,7 +195,7 @@ def create_app(test_config=None):
         else:
           # source where I found how to use not_in() https://stackoverflow.com/questions/26182027/how-to-use-not-in-clause-in-sqlalchemy-orm-query
           questions = Question.query.filter_by(category=category_id).filter(Question.id.not_in(previous_questions)).all()
-      else:  
+      elif category_id == 0:  
         if previous_questions == None:
           questions = Question.query.all()
         else:
