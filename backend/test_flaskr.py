@@ -52,7 +52,7 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(data['message'], 'method not allowed')
 
     def test_delete_question(self):
-        res = self.client().delete('/questions/1')
+        res = self.client().delete('/questions/6')
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)
